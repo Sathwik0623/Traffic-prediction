@@ -1,0 +1,65 @@
+{% extends 'userbase.html' %}
+{% load static %}
+
+{% block contents %}
+ <div id="navlist"><div class="navlist-right">
+       
+          <a href="{% url 'index' %}" class="navbar-brand headerFont text-lg"><strong>HOME</strong></a>
+
+<div class="header-right">
+
+                          </div>
+        </div></div>
+           </div>
+<div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+             <!--   <h1 class="header-headline bold"> Traffic Prediction for Intelligent Transportation System using Machine Learning <br></h1> -->
+                <!--<h4 class="header-running-text light"> A top notch premium quality template for your next
+                    web project.</h4>-->
+<!--                <a href="#email-form">-->
+<!--                    <button class="hero-btn"> Traffic</button>&ndash;&gt;-->
+<!--                </a>-->
+            </div><!--hero-left-->
+          
+<div class="container" style="padding-top:15px;">
+    	<div class="row">
+    		<div class="col-sm-4"></div>
+    		<div class="col-sm-4" style="border:2px solid gray;padding:20px;">
+    			<center>
+    			<div class="page-header">
+    				<h2 class="specialHead">Authentication</h2>
+    			</div> <h3 class="Authentication">User Register</h3> 
+                          <center> <h2><form action="/userregister/" method="POST">
+                                    {% csrf_token %}
+                                    <table>
+ 
+
+                                        <tr><td style="color:black;font-weight:bold" id="g1" class="user-reg">User Registration</td><td>{{form.name}}&nbsp;</td></tr>
+                            <tr><td style="color:black;font-weight:bold">Password</td><td>{{form.passwd}}&nbsp;</td></tr>
+                            <tr><td style="color:black;font-weight:bold">ConfirmPassword</td><td>{{form.cwpasswd}}&nbsp;</td></tr>
+                            <tr><td style="color:black;font-weight:bold">Email</td><td>{{form.email}}&nbsp;&nbsp;</td></tr>
+                            <tr><td style="color:black;font-weight:bold"margin-bottom:10px">Mobile</td><td>{{form.mobileno}}&nbsp;</td></tr>
+                            <tr><td></td><td>{{form.status}}</td></tr>
+                                    </table>
+                               &nbsp;
+ <button type="submit" class="btn btn-block span btn-primary ">
+<span class="glyphicon glyphicon-user"></span>Submit</button> </a>
+
+                          </form></h2></center> 
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+</center>
+
+
+<!--            <div class="col-sm-6 col-sm-6 ipad">-->
+<!--                <img class="ipad-screen img-responsive" src="{% static 'images/traffic.png' %}"/>-->
+<!--            </div>-->
+
+
+
+        </div></div></div>
+{% endblock %}

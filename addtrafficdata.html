@@ -1,0 +1,61 @@
+{% extends 'userbase.html' %}
+{% load static %}
+
+{% block contents %}
+ <div id="navlist"><div class="navlist-right">
+       
+          <a href="{% url 'index' %}" class="navbar-brand headerFont text-lg"><strong>HOME</strong></a>
+
+<div class="header-right">
+
+                          </div>
+        </div></div>
+           </div>
+<div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+          <!--        <h1 class="header-headline bold"> Traffic Prediction for Intelligent Transportatio System using Machine Learning <br></h1>-->
+                <!--<h4 class="header-running-text light"> A top notch premium quality template for your next
+                    web project.</h4>-->
+<!--                <a href="#email-form">-->
+<!--                    <button class="hero-btn"> Traffic</button>&ndash;&gt;-->
+<!--                </a>-->
+               
+            </div><!--hero-left-->
+<div>
+<!--<a href="{% url 'userlogincheck' %}" class="navbar-brand headerFont text-lg"><strong>BACK</strong></a>-->
+</div>
+
+    <center>
+    <form method="POST" action="{%url 'adddata'%}" >
+                {% csrf_token %}
+                <table>
+                    <tr><td>Date</td><td>{{form.Date}}</td></tr>
+                    <tr><td>Day</td><td>{{form.Day}}</td></tr>
+                    <tr><td>CodedDay</td><td>{{form.CodedDay}}</td></tr>
+                    <tr><td>Zone</td><td>{{form.Zone}}</td></tr>
+                    <tr><td>Weather</td><td>{{form.Weather}}</td></tr>
+                    <tr><td>Temperature</td><td>{{form.Temperature}}</td></tr>
+                    <tr><td>Traffic</td><td>{{form.Traffic}}</td></tr>
+
+
+                    <tr><td><button  class="btn btn-danger my-2 my-sm-0" type="submit" style = "margin-left:20%;">Add Data</button></td></tr>
+
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='yellow'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+
+                </table>
+
+            </form>
+</center>
+
+<!--            <div class="col-sm-6 col-sm-6 ipad">-->
+<!--                <img class="ipad-screen img-responsive" src="{% static 'images/traffic.png' %}"/>-->
+<!--            </div>-->
+
+
+
+        </div>
+{% endblock %}

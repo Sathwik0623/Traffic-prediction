@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+<div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+               <!-- <h1 class="header-headline bold"> Traffic Prediction for Intelligent Transportation System using Machine Learning <br></h1> -->
+			<marquee font-size=50px>Traffic Prediction for Intelligent Transportation System using Machine Learning</marquee>
+                <!--<h4 class="header-running-text light"> A top notch premium quality template for your next
+                    web project.</h4>-->
+<!--                <a href="#email-form">-->
+<!--                    <button class="hero-btn"> Traffic</button>&ndash;&gt;-->
+<!--                </a>-->
+<div class="container" style="padding-top:100px;">
+    	<div class="row">
+    		<div class="col-sm-4"></div>
+    		<div class="col-sm-4" style="border:2px solid black;padding:50px;">
+    			
+    			<div class="page-header">
+    				<h2 class="specialHead" style="color:black">Authentication</h2>
+    			</div>
+         
+
+                    <h2><form action="/adminloginentered/" method="POST">
+                                 {% csrf_token %}<center>
+					
+                                <table><tr><td style="color:black">
+
+      				<label for="">Username</label><br>
+                                <input  type="text" name="uname" placeholder="admin Login" required ><br/><br/>
+<!--                                    <input type="email" name="email"  placeholder="Email">-->
+				<label for="">Password</label><br>
+                                 <input  type="password" name="upasswd" placeholder="Password" required ><br/><br/>
+                                    </td></tr></table>
+<button type="submit" class="btn btn-block span btn-primary ">
+<span class="glyphicon glyphicon-user"></span> Sign In</button> </a> <br/>
+
+                           </center> </form> </h2>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+            </div><!--hero-left-->
+
+<!--            <div class="col-sm-6 col-sm-6 ipad">-->
+<!--                <img class="ipad-screen img-responsive" src="{% static 'images/traffic.png' %}"/>-->
+<!--            </div>-->
+
+
+
+        </div>
+{% endblock %}

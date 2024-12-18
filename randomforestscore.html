@@ -1,0 +1,55 @@
+{% extends 'userbase.html' %}
+{% load static %}
+
+{% block contents %}
+ <div class="navbar-header">
+<div align="center">
+       
+          <a href="{% url 'index' %}" class="navbar-brand headerFont text-lg"><strong>HOME</strong></a>
+	<a href="{% url 'adddata' %}" class="navbar-brand headerFont text-lg"><strong>ADD DATA</strong></a>
+	<!-- <a href="{% url 'storecsvdata' %}" class="navbar-brand headerFont text-lg"><strong>STORE DATA</strong></a> -->
+	<a href="{% url 'randomforest' %}" class="navbar-brand headerFont text-lg"><strong>RANDOM FOREST</strong></a>
+	<!--<a href="{% url 'svm' %}" class="navbar-brand headerFont text-lg"><strong>SVM</strong></a>-->
+	<!-- <a class="navbar-brand headerFont text-lg"  href="#featuresTab"><span class="subFont"><strong>Features</strong></a> --></div></div>
+<div class="header-right">
+<span class="normalFont"> <a class="btn btn-success navbar-right navbar-btn" href="{% url 'logout'%}"><strong>LOGOUT</strong></a></span>
+
+            </div>
+        
+           </div>
+<div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+            <!--    <h1 class="header-headline bold"> Traffic Prediction for Intelligent Transportation System using Machine Learning <br></h1> -->
+
+                <!--<h4 class="header-running-text light"> A top notch premium quality template for your next
+                    web project.</h4>-->
+<!--                <a href="#email-form">-->
+<!--                    <button class="hero-btn"> Traffic</button>&ndash;&gt;-->
+<!--                </a>-->
+             <!--   <center><h3>welcome to admin page</h3></center>-->
+	            </div><!--hero-left-->
+
+<div> 
+<a href="{% url 'adminloginentered' %}" class="navbar-brand headerFont text-lg"><strong>BACK</strong></a>
+</div>
+<div class="row">
+</div>
+
+    <table align="center" border="2px solid blue">
+        <tr><td>accuracy</td>
+        <td>f1-score</td></tr>
+
+        <tr>
+            <td>{{object.accuracy}}</td>
+            <td>{{object.f1score}}</td>
+        </tr>
+    </table>
+
+<!--            <div class="col-sm-6 col-sm-6 ipad">-->
+<!--                <img class="ipad-screen img-responsive" src="{% static 'images/traffic.png' %}"/>-->
+<!--            </div>-->
+
+
+
+        </div>
+{% endblock %}

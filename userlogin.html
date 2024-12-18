@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+
+<div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+             <!--   <h1 class="header-headline bold"> Traffic Prediction for Intelligent Transportation System using Machine Learning <br></h1> -->
+                <!--<h4 class="header-running-text light"> A top notch premium quality template for your next
+                    web project.</h4>-->
+<!--                <a href="#email-form">-->
+<!--                    <button class="hero-btn"> Traffic</button>&ndash;&gt;-->
+<!--                </a>-->
+            </div><!--hero-left-->
+            <h2><form action="/userlogincheck/" method="POST">
+                                 {% csrf_token %}<center>
+                              <div class="container" style="padding-top:10px;">
+    	<div class="row">
+    		<div class="col-sm-4"></div>
+    		<div class="col-sm-4" style="border:2px solid gray;padding:40px;">
+    			
+    			<div class="page-header">
+    				<h2 class="specialHead">Authentication</h2>
+    			</div>
+          
+      			<!-- <div class="form-group">
+      				<label for="">Username</label><br>
+      				<input style="font-size:20px" type="Email" name="Email" placeholder="Enter UserName" class="form-control" required><br>
+
+      				<label for="">Password</label><br>
+      				<input type="password" name="UserPassword" class="form-control" placeholder="Enter user's Password" required><br><br/><br/>
+                    -->
+ <div class="form-group">
+<label for="">Username</label> <br>
+<input type="email" name="email"  placeholder="Email" size="17" required>
+<label for="">Password</label><br>
+                                 <input  type="password" name="upasswd" placeholder="Password" size="17" required><br/><br/> 
+                               
+<button type="submit" class="btn btn-block span btn-primary ">
+<span class="glyphicon glyphicon-user"></span> Sign In</button>
+<p><center><strong>OR</strong></center></p>
+ <a href="{% url 'userregister' %}"<button type="submit" class="btn btn-block span btn-primary ">
+<span class="glyphicon glyphicon-user"></span> Sign UP</button> </a>
+                           </center> </form> </h2> </div>
+<div class="col-sm-4"></div>
+</div> 
+</div>
+</div>
+
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+
+
+<!--            <div class="col-sm-6 col-sm-6 ipad">-->
+<!--                <img class="ipad-screen img-responsive" src="{% static 'images/traffic.png' %}"/>-->
+<!--            </div>-->
+
+
+
+        </div>
+{% endblock %}

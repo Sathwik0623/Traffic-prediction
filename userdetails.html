@@ -1,0 +1,61 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block contents %}
+
+
+
+<!--<div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+                <h1 class="header-headline bold"> Traffic Prediction for Intelligent Transportation System using Machine Learning <br></h1>-->
+  </div><!--hero-left-->
+                
+
+          <div class="header-top">
+          <a href="{% url 'adminloginentered' %}" class="navbar-brand headerFont text-lg"><strong>BACK</strong></a>
+</div>
+
+
+            <center><h2>
+        <table border="2px solid red"  align="down">
+<font size="10">
+                                  <tr><th style="color:green">Id</th>
+                                      <th style="color:green">name</th>
+
+                                    <th style="color:green">email</th>
+                                    <th style="color:green">mobileno</th>
+                                    <th style="color:green">status</th>
+                                    <th style="color:green">activate</th>
+                                  </tr>
+
+                              {% for x in qs %}
+                                  <tr>
+                                    <td style="color:red">{{x.id}}</td>
+                                    <td style="color:red">{{x.name}}</td>
+
+                                    <td style="color:red">{{x.email}}</td>
+                                    <td style="color:red">{{x.mobileno}}</td>
+                                    <td style="color:red">{{x.status}}</td>
+
+                                    {% if x.status == 'waiting' %}
+                                    <td style="color:orange"> <a href="/activateuser/?pid={{ x.id }}" >Activate</a></td>
+                                    {% else %}
+                                            <td style="color:orange"> Activated</td>
+                                            {% endif %}
+
+                                     </tr>
+                                    {% endfor %}
+
+               </table>
+                </h2>
+              </center>
+
+
+<!--            <div class="col-sm-6 col-sm-6 ipad">-->
+<!--                <img class="ipad-screen img-responsive" src="{% static 'images/traffic.png' %}"/>-->
+<!--            </div>-->
+
+
+
+        </div>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traffic</title>
+    <meta name="Nova theme" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+</head>
+
+<body>
+
+<!-- Navigation
+    ================================================== -->
+<!--<div class="hero-background">
+    <div>
+        <img class="strips" src="{% static 'images/strips.png' %}">
+    </div>
+-->
+    <div class="container">
+        <div class="header-container header">
+          <!--  <a class="navbar-brand logo" href="#"> <img class="logo" src="{% static 'images/logo.svg' %}"/> </a> -->
+            <a href="#email-form">
+<!--                <button class="header-btn"> Download FREE!</button>-->
+            </a>
+<div class="container">
+  	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse
+    " role="navigation">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>   
+
+       
+  <div id="navlist"><div class="navlist-right">
+         <a href="{% url 'index' %}" class="navbar-brand headerFont text-lg"><strong>HOME</strong></a>
+	  
+	<a href="{% url 'userdetails' %}" class="navbar-brand headerFont text-lg"><strong>USERSDATA</strong></a>
+	<a href="{% url 'randomforest' %}" class="navbar-brand headerFont text-lg"><strong>VIEWFIELDDATA</strong></a>
+            <div class="header-right">
+<span class="normalFont"> <a class="btn btn-success navbar-right navbar-btn" href="{% url 'logout'%}"><strong>LOGOUT</strong></a></span>
+
+             </div>             </div>
+<div class="conatiner" style="padding:50px;" id="aboutTab">
+        <div class="row">
+
+          
+</div>
+</div>
+</div>
+</div>
+</div>
+   
+
+       
+ 
+ <!--navigation-->
+{% block contents %}
+
+
+
+            {% endblock %}
+
+
+        <!-- Hero-Section
+          ================================================== -->
+
+
+    </div> <!--hero-container-->
+
+</div><!--hero-background-->
+
+
+
+
+
+
+
+
+</body>
+
+</html>
